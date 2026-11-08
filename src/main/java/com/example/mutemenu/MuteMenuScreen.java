@@ -39,11 +39,23 @@ public class MuteMenuScreen extends Screen {
         close();
     }
 
-    @Override public void render(DrawContext context, int mouseX, int mouseY, float delta) {
-        renderBackground(context, mouseX, mouseY, delta);
-        context.drawCenteredTextWithShadow(textRenderer, Text.literal("Выбери правило для " + playerName), width / 2, 16, 0xFFFFFF);
-        super.render(context, mouseX, mouseY, delta);
-    }
+    
+@Override
+public void render(DrawContext context, int mouseX, int mouseY, float delta) {
+    context.fill(0, 0, this.width, this.height, 0xE0101010);
+
+    context.drawCenteredTextWithShadow(
+        textRenderer,
+        Text.literal("Выбери правило для " + playerName),
+        width / 2,
+        16,
+        0xFFFFFF
+    );
+
+    super.render(context, mouseX, mouseY, delta);
+}
+
+
 
     @Override public boolean shouldPause() { return false; }
 }
