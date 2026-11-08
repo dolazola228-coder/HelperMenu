@@ -1,0 +1,16 @@
+{
+  "schemaVersion": 1,
+  "id": "mute_menu",
+  "version": "${version}",
+  "name": "Mute Menu",
+  "description": "Click a player name in chat and select a moderation rule to tempmute them.",
+  "environment": "client",
+  "entrypoints": { "client": ["com.example.mutemenu.MuteMenuClient"] },
+  "mixins": ["mute_menu.mixins.json"],
+  "depends": {
+    "fabricloader": ">=0.18.1",
+    "minecraft": "1.21.11",
+    "java": ">=21",
+    "fabric-api": "*"
+  }
+}
