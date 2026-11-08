@@ -26,7 +26,7 @@ public abstract class ChatHudMixin {
         MinecraftClient client = MinecraftClient.getInstance();
         if (client.getNetworkHandler() == null || message == null) return message;
         List<String> names = new ArrayList<>();
-        client.getNetworkHandler().getPlayerList().forEach(entry -> names.add(entry.getProfile().getName()));
+        client.getNetworkHandler().getPlayerList().forEach(entry -> names.add(entry.getProfile().name()));
         names.sort(Comparator.comparingInt(String::length).reversed());
         String raw = message.getString();
         Pattern pattern = Pattern.compile("(?<![A-Za-z0-9_])(" + names.stream().map(Pattern::quote).reduce((a,b) -> a + "|" + b).orElse("(?!)") + ")(?![A-Za-z0-9_])");
